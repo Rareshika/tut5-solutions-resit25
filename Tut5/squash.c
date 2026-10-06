@@ -19,7 +19,7 @@ int main(int argc, char* argv[]) {
     scanf("%d%d", &n, &m);
 
     int step = 1;
-    if (n >= m) {
+    if (n >= 10 * m) {
         n = sumOfSquaredDigits(n, m);
     }
 
