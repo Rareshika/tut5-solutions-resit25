@@ -1,14 +1,13 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-int arr[1015];
+int arr[10015];
 
 int sumOfSquaredDigits(int nr, int m) {
     int sum = 0;
     do {
         int digit = nr % 10;
-        sum += digit * digit;
-        sum %= m;
+        sum += (digit * digit) % m;
         nr /= 10;
     } while (nr > 0);
 
@@ -27,7 +26,7 @@ int main(int argc, char* argv[]) {
     while (arr[n] == 0) {
         arr[n] = step;
         n = sumOfSquaredDigits(n, m);
-        step ++;
+        step++;
     }
     printf("%d\n", step - arr[n]);
 
